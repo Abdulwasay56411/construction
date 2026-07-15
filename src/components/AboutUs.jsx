@@ -7,22 +7,22 @@ const AboutUs = () => {
     const [isActive, setIsActive] = useState(0)
 
     return (
-        <div className='py-10 px-5 md:px-8 lg:px-10'>
+        <div className='py-10 px-5 md:px-8 lg:pl-10'>
             <Heading text1={'About US'} />
             <div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between'>
-                <div className='lg:w-1/2 pt-6'>
-                    <h1 className='heading text-3xl md:text-4xl lg:text-[50px] text-[#000000] font-black leading-14 '>A Decade of Workforce
+                <div className='w-full lg:w-1/2 pt-6'>
+                    <h1 className='heading text-4xl lg:text-[50px] text-[#000000] font-black leading-12 sm:leading-14 '>A Decade of Workforce
                         Excellence in Saudi Arabia</h1>
-                    <p className='text-[#00000099] text-lg font-normal py-3'>Telal Al Shaheqa Contracting Co. was established in 1992, its recognised
+                    <p className='text-[#00000099] text-[12px] sm:text-lg font-normal py-3'>Telal Al Shaheqa Contracting Co. was established in 1992, its recognised
                         as one of the local leading construction companies in the kingdom for
                         its exceptional services in water, oil & gas, Petrochemical and
                         environmental industries.</p>
-                    <div className='max-w-137 flex justify-between gap-2 bg-[#F7F7F7] rounded-xl my-3'>
+                    <div className='max-w-137 mx-5 flex justify-between gap-2 bg-[#F7F7F7] rounded-xl my-3'>
                         {button.map((item, index) => (
                             <button key={index} onClick={() => setIsActive(index === isActive ? null : index)} className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}>{item.text}</button>
                         ))}
                     </div>
-                    <p className='text-lg font-normal py-3 text-[#000000]'>TELAL AL SHAHEQA CONTRACTING CO. is a leading Saudi contracting
+                    <p className='text-[12px] sm:text-lg font-normal py-3 text-[#000000]'>TELAL AL SHAHEQA CONTRACTING CO. is a leading Saudi contracting
                         and industrial support company with decades of experience in
                         delivering reliable, safe, and high-quality solutions. We proudly
                         serve the oil & gas, petrochemical, water, environmental, commercial,
@@ -31,8 +31,8 @@ const AboutUs = () => {
                     <div className='grid grid-cols-[1fr_1.7fr]'>
                      {work.map((item, index) =>(
                           <div key={index} className='flex items-center gap-2'>
-                            <img className='w-4' src={item.image} alt="" />
-                            <p className='text-[#000000] font-medium text-lg'>{item.text}</p>
+                            <img className='w-2.5 sm:w-4' src={item.image} alt="" />
+                            <p className='text-[#000000] font-medium text-[10px] sm:text-lg'>{item.text}</p>
                           </div>
                      ))}
                     </div>
@@ -43,10 +43,15 @@ const AboutUs = () => {
                 </div>
                 <div className='relative'>
                     <img className='max-w-147 w-full h-auto object-contain' src="/About.png" alt="" />
-                    {/* <div className='absolute'>
-                        <h1>ISO</h1>
-                        <span>CERTIFIED</span>
-                    </div> */}
+                    <div className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25'>
+                        <h1 className='text-[#FFFFFF] font-extrabold text-2xl'>ISO</h1>
+                        <span className='text-[#FFFFFFA6] font-semibold text-sm'>CERTIFIED</span>
+                    </div>
+                    <div className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)]'>
+                     <h1 className='text-[#D48E26] font-extrabold text-2xl'>15+</h1>
+                     <p className='text-[#000000] font-semibold text-sm'>Source Countries</p>
+                     <span className='text-[#000000A6] font-normal text-[12px]'>Global talent network</span>
+                    </div>
                 </div>
             </div>
         </div>
