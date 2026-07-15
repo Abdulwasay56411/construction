@@ -39,7 +39,7 @@ const AboutUs = () => {
                         )}
                     </div>
 
-                    <div className='grid grid-cols-[1fr_1.7fr] gap-x-4 gap-y-3 py-5'>
+                    <div className='grid grid-cols-[1fr_1.3fr] sm:grid-cols-[1fr_1.7fr] gap-x-4 gap-y-3 py-5'>
                         {workData[isActive]?.map((item, index) => (
                             <div key={index} className='flex items-center gap-2'>
                                 <img className='w-2.5 sm:w-4' src={item.image} alt="" />
