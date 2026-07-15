@@ -5,3 +5,11 @@ body{
   max-width: 1400px;
   margin: auto;
 }
+
+.font{
+  font-family: "Protest Strike";
+}
+
+.heading{
+  font-family: 'Fira Sans';
+}

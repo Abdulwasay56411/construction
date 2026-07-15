@@ -8,15 +8,22 @@ const Navbar = () => {
     return (
         <div className='sticky top-0 z-50'>
             {/* Top bar */}
-            <div className='w-full bg-black px-5 md:px-8 lg:px-10 py-2 h-9 flex items-center justify-between'>
-                <div className='flex text-white items-center gap-2'>
-                    <img className='w-5' src="/mail.png" alt="" />
-                    <span className='leading-none text-[12px] font-semibold'>zulfiqarshafiq@tsccontracting.com</span>
+            <div className='w-full bg-black px-5 md:px-8 lg:px-10 py-2 h-auto flex items-center justify-between'>
 
-                    <div className='h-5 w-px bg-[#F27700] mx-4'></div>
+                {/* Left side: Contact Details */}
+                <div className='flex flex-col sm:flex-row items-start sm:items-center gap-2'>
 
-                    <img className='w-3' src="/phone.png" alt="" />
-                    <span className='leading-none text-[12px] font-semibold'>+966 53 410 9601</span>
+                    {/* Phone Row */}
+                    <div className="flex items-center gap-2 text-white">
+                        <img className='w-3' src="/phone.png" alt="" />
+                        <span className='leading-none text-[12px] font-semibold'>+966 53 410 9601</span>
+                    </div>
+                    <div className='hidden sm:block h-4 w-px bg-[#F27700] mx-2'></div>
+                    {/* Email Row */}
+                    <div className="flex items-center gap-2 text-white">
+                        <img className='w-4' src="/mail.png" alt="" />
+                        <span className='leading-none text-[12px] font-semibold'>zulfiqarshafiq@tsccontracting.com</span>
+                    </div>
                 </div>
                 <div className='flex gap-5'>
                     {icon.map((item, index) => (
@@ -30,9 +37,7 @@ const Navbar = () => {
                     <img className='w-63 h-11.5' src="/navbar icon.png" alt="" />
                     <div className='hidden lg:flex gap-5'>
                         {navLink.map((item, index) => (
-                            <div key={index}>
-                                <h1 onClick={() => setIsActive(index === isActive ? null : index)} className={`font-semibold text-sm transition-all duration-300 cursor-pointer select-none ${index === isActive ? "text-[#D48E26]" : "text-[#000000]"}`}>{item.name}</h1>
-                            </div>
+                            <h1 key={index} onClick={() => setIsActive(index === isActive ? null : index)} className={`font-semibold text-sm transition-all duration-300 cursor-pointer select-none ${index === isActive ? "text-[#D48E26]" : "text-[#000000]"}`}>{item.name}</h1>
                         ))}
                     </div>
                     <div className='hidden lg:flex gap-3'>
@@ -40,7 +45,7 @@ const Navbar = () => {
                         <button className='border border-[#000000] text-[12px] font-semibold w-27 h-10 rounded-4xl'>GET QUOTE</button>
                     </div>
                     <div className='block lg:hidden'>
-                    <IoMdMenu className='text-4xl'/>
+                        <IoMdMenu className='text-4xl' />
                     </div>
                 </div>
             </div>
