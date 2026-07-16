@@ -1,7 +1,7 @@
 import React from 'react'
 import { FiDownload } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa6";
-import { motion, useInView } from 'framer-motion';
+import {  useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 
