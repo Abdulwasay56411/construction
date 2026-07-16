@@ -24,20 +24,20 @@ const OurService = () => {
                      <span className='text-[12px] font-medium text-[#D48E26]'>Primary Summary</span>
                   </div>
                   <div>
-                     <h1 className='text-[#FFFFFF] font-extrabold text-[28px] py-3'>{activeData.head}</h1>
-                     <p className='text-lg font-medium text-[#D1D1D1]'>{activeData.para}</p>
+                     <h1 className='text-[#FFFFFF] font-extrabold text-xl md:text-2xl lg:text-[28px] py-3'>{activeData.head}</h1>
+                     <p className='text-sm md:text-base lg:text-lg font-medium text-[#D1D1D1]'>{activeData.para}</p>
                   </div>
                   <div className='grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] items-center  gap-3 my-4'>
                      {activeData.services.map((listItem, i) => (
                         <div className='flex items-center gap-2'>
                            <img className='w-3 h-3' src="/round.png" alt="" />
-                           <span key={i} className='text-sm font-medium text-[#D1D1D1]'>{listItem}</span>
+                           <span key={i} className='text-[12px] md:text-sm font-medium text-[#D1D1D1]'>{listItem}</span>
                         </div>
                      ))}
                   </div>
                   <div className='flex items-center gap-3'>
                      <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer'>Request This Service <FaArrowRight size={15}/> </button>
-                     <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[12px] text-[#E4DFDF] cursor-pointer'>Learn More</button>
+                     <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer'>Learn More</button>
                   </div>
                </div>
             </div>
