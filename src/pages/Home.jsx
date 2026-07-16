@@ -6,6 +6,7 @@ import OurJourney from '../components/OurJourney'
 import WhyChooseUs from '../components/WhyChooseUs'
 import OurService from '../components/OurService'
 import WorkForce from '../components/WorkForce'
+import Industries from '../components/Industries'
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         <WhyChooseUs/>
         <OurService/>
         <WorkForce/>
+        <Industries/>
     </div>
   )
 }

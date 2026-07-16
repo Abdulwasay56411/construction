@@ -16,8 +16,12 @@ const OurService = () => {
                   <button key={item.id} onClick={() => setActiveTab(index)} className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl  ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}>{item.btn}</button>
                ))}
             </div>
-            <div className='flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'>
+            <div className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'>
                <img className='max-w-143.5 w-full object-cover max-h-113.25 rounded-[15px] h-auto' src={activeData.image} alt="" />
+               <div className='hidden lg:absolute lg:top-12  lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl'>
+               <img className='w-2.5 h-auto' src="/1star.png" alt="" />
+               <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
+               </div>
                <div>
                   <div className='flex items-center gap-2 py-2 mb-2 justify-center rounded-xl px-2 bg-[#D48E2633] border border-[#D48E26] w-53 h-auto'>
                      <img className='w-18 h-auto' src="/star.png" alt="" />
