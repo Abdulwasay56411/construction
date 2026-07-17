@@ -10,6 +10,8 @@ import Industries from '../components/Industries'
 import OurProcess from '../components/OurProcess'
 import OurWork from '../components/OurWork'
 import OurClient from '../components/OurClient'
+import Testmonials from '../components/Testmonials'
+import AskedQuestion from '../components/AskedQuestion'
 
 const Home = () => {
   return (
@@ -25,6 +27,8 @@ const Home = () => {
         <OurProcess/>
         <OurWork/>
         <OurClient/>
+        <Testmonials/>
+        <AskedQuestion/>
     </div>
   )
 }
