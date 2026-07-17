@@ -9,6 +9,7 @@ import WorkForce from '../components/WorkForce'
 import Industries from '../components/Industries'
 import OurProcess from '../components/OurProcess'
 import OurWork from '../components/OurWork'
+import OurClient from '../components/OurClient'
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
         <Industries/>
         <OurProcess/>
         <OurWork/>
+        <OurClient/>
     </div>
   )
 }
