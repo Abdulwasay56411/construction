@@ -4,9 +4,9 @@ const Heading = ({ text1, text2, text3, para,para1 }) => {
   return (
     <div className='flex flex-col items-center text-center'>
       <div className='flex items-center gap-3'>
-        <hr className='w-10 sm:w-17.5 text-[#D48E26] h-0' />
+        <hr className='w-12 sm:w-17.5 text-[#D48E26] h-0' />
         <h1 className='text-[#D48E26] font-medium text-sm sm:text-xl'>{text1}</h1>
-        <hr className='w-10 sm:w-17.5 text-[#D48E26] h-0' />
+        <hr className='w-12 sm:w-17.5 text-[#D48E26] h-0' />
 
       </div>
       <div className=''>

@@ -19,8 +19,8 @@ const OurService = () => {
             <div className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'>
                <img className='max-w-143.5 w-full object-cover max-h-113.25 rounded-[15px] h-auto' src={activeData.image} alt="" />
                <div className='hidden lg:absolute lg:top-12  lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl'>
-               <img className='w-2.5 h-auto' src="/1star.png" alt="" />
-               <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
+                  <img className='w-2.5 h-auto' src="/1star.png" alt="" />
+                  <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
                </div>
                <div>
                   <div className='flex items-center gap-2 py-2 mb-2 justify-center rounded-xl px-2 bg-[#D48E2633] border border-[#D48E26] w-53 h-auto'>
@@ -40,7 +40,7 @@ const OurService = () => {
                      ))}
                   </div>
                   <div className='flex items-center gap-3'>
-                     <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer'>Request This Service <FaArrowRight size={15}/> </button>
+                     <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer'>Request This Service <FaArrowRight size={15} /> </button>
                      <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer'>Learn More</button>
                   </div>
                </div>
