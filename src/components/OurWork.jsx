@@ -11,7 +11,7 @@ const OurWork = () => {
      : project.find(p => p.category === activeTile)?.image || []; 
 
     return (
-        <div className='px-5 md:px-8 lg:px-10 py-10'>
+        <div className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto'>
             <div className='flex items-center gap-3'>
                 <hr className='w-17.5 sm:w-17.5 text-[#D48E26] h-0' />
                 <h1 className='text-[#D48E26] font-medium text-sm sm:text-xl'>Our Work</h1>
@@ -21,7 +21,7 @@ const OurWork = () => {
                 <h1 className='text-[#000000] text-3xl md:text-[40px] font-extrabold'>Featured Projects</h1>
                 <div className='flex flex-wrap justify-center items-center gap-2'>
                   {btn.map((item) =>(
-                        <button onClick={() => setIsActive(item.id)} key={item.id} className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#000000] bg-[#F5F3F3] "}`}>{item.title}</button>
+                        <button onClick={() => setIsActive(item.id)} key={item.id} className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl transition-all duration-300 ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#000000] bg-[#F5F3F3] "}`}>{item.title}</button>
                   ))}
                 </div>
             </div>

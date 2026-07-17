@@ -34,7 +34,7 @@ const OurProcess = () => {
             />
 
             <motion.div
-                className='grid grid-cols-1 md:grid-cols-5 md:justify-items-center mt-16 mb-5 relative gap-y-14'
+                className='grid grid-cols-1 md:grid-cols-5 md:justify-items-center mt-16 mb-5 relative gap-y-14 max-w-350 mx-auto'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"

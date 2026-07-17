@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 
 const WorkForce = () => {
     return (
-        <div className='px-5 md:px-8 lg:px-10 py-10'>
+        <div className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto'>
             <Heading text1={'WORKFORCE SPECIALIZATION'} text2={'16 Manpower Categories'} para={'Covering every workforce requirement across all major industrial and commercial sectors in Saudi Arabia.'} />
             <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 justify-items-center lg:justify-items-start gap-5 mt-10 mb-5'>
                 {boxes.map((item) => (
