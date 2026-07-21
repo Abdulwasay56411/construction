@@ -12,6 +12,8 @@ import OurWork from '../components/OurWork'
 import OurClient from '../components/OurClient'
 import Testmonials from '../components/Testmonials'
 import AskedQuestion from '../components/AskedQuestion'
+import GetInTouch from '../components/GetInTouch'
+import Ready from '../components/Ready'
 
 const Home = () => {
   return (
@@ -29,6 +31,8 @@ const Home = () => {
         <OurClient/>
         <Testmonials/>
         <AskedQuestion/>
+        <GetInTouch/>
+        <Ready/>
     </div>
   )
 }
