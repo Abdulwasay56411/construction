@@ -80,8 +80,7 @@ const Navbar = () => {
                         </a>
                     ))}
                     <hr className='border-gray-300 my-2' />
-                    <a href="#quote">
-                    onClick={() => setIsOpen(false)}
+                    <a  onClick={() => setIsOpen(false)} href="#quote">
                         <button onClick={() => setIsOpen(false)} className='border border-[#000000] text-sm font-bold w-full h-12 rounded-4xl cursor-pointer bg-white'>GET QUOTE</button>
                     </a>
                     
