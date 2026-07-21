@@ -14,6 +14,7 @@ import Testmonials from '../components/Testmonials'
 import AskedQuestion from '../components/AskedQuestion'
 import GetInTouch from '../components/GetInTouch'
 import Ready from '../components/Ready'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
@@ -33,6 +34,7 @@ const Home = () => {
         <AskedQuestion/>
         <GetInTouch/>
         <Ready/>
+        <Footer/>
     </div>
   )
 }

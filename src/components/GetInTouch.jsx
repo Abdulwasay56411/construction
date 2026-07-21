@@ -1,5 +1,6 @@
 import React from 'react'
 import Heading from './Heading'
+import { FiSend } from 'react-icons/fi'
 
 const GetInTouch = () => {
     return (
@@ -60,8 +61,8 @@ const GetInTouch = () => {
                             <textarea className='w-full h-32 p-4 bg-[#F3F3F3] border border-[#E6E6E6] rounded-lg outline-none resize-none' placeholder='Describe your manpower requirements, project scope, timeline and any specific qualification needed...'></textarea>
                         </div>
                         <div className='sm:col-span-2'>
-                            <button className='w-full h-12 bg-[#D48E26] text-white font-bold rounded-lg tracking-wider hover:bg-[#b8771e] transition-all'>
-                                SEND MESSAGE
+                            <button className='w-full h-12 bg-[#D48E26] text-white font-bold rounded-lg tracking-wider hover:bg-[#b8771e] transition-all flex justify-center items-center gap-2'>
+                              <FiSend size={16} />  SEND MESSAGE
                             </button>
                         </div>
                     </div>

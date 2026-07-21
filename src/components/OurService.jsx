@@ -33,7 +33,7 @@ const OurService = () => {
                   </div>
                   <div className='grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] items-center  gap-3 my-4'>
                      {activeData.services.map((listItem, i) => (
-                        <div className='flex items-center gap-2'>
+                        <div key={i} className='flex items-center gap-2'>
                            <img className='w-3 h-3' src="/round.png" alt="" />
                            <span key={i} className='text-[12px] md:text-sm font-medium text-[#D1D1D1]'>{listItem}</span>
                         </div>

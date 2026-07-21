@@ -7,7 +7,7 @@ const Industries = () => {
         <Heading text1={'INDUSTRIES WE SERVE'} text2={'Powering Every Sector'} para={'From upstream oil & gas to urban infrastructure our workforce solutions serve every major industry shaping Saudi Arabia.'}/>
         <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 lg:grid-cols-3 py-8 max-w-350 mx-auto'>
           {imgBox.map((item) =>(
-        <img className='w-full h-auto object-cover' src={item.image} alt="" />
+        <img key={item.id} className='w-full h-auto object-cover' src={item.image} alt="" />
           ))}
         </div>
     </div>
