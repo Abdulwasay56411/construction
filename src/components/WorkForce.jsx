@@ -18,7 +18,7 @@ const WorkForce = () => {
                 ))}
             </div>
             <div className='flex justify-center'>
-                <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2'>REQUEST SPECIALIZED MANPOWER <FaArrowRight size={16} /> </button>
+                <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2 transition-all  hover:-translate-y-1 duration-300'>REQUEST SPECIALIZED MANPOWER <FaArrowRight size={16} /> </button>
             </div>
         </div>
     )

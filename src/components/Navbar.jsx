@@ -53,7 +53,7 @@ const Navbar = () => {
                     {/* Desktop Buttons */}
                     <div className='hidden lg:flex'>
                       <a href="#quote">
-                      <button className='border border-[#000000] text-[12px] font-semibold w-27 h-10 rounded-4xl cursor-pointer hover:bg-black hover:text-white transition-all'>GET QUOTE</button>
+                      <button className='border border-[#000000] text-[12px] font-semibold w-27 h-10 rounded-4xl cursor-pointer hover:bg-black hover:text-white transition-all hover:-translate-y-1 duration-300 '>GET QUOTE</button>
                       </a>
                     </div>
 

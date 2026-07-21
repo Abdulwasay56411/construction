@@ -46,12 +46,12 @@ const HeroSection = () => {
           <p className='max-w-80 sm:max-w-160 py-3 text-[#FFFFFF] text-[10px] sm:text-lg font-light'>Providing highly skilled manpower, engineering professionals, construction workforce and contracting solutions across Saudi Arabia with quality, safety and reliability.</p>
         </div>
         <div className='flex flex-col sm:flex-row gap-3'>
-          <button className='flex items-center justify-center gap-2 w-49.75 h-10.25 bg-[#D48E26] text-[#FFFFFF] font-bold text-[13px] rounded-xl'>REQUEST MANPOWER <FaArrowRight size={16} /></button>
+          <button className='flex items-center justify-center gap-2 w-49.75 h-10.25 bg-[#D48E26] text-[#FFFFFF] font-bold text-[13px] rounded-xl transition-all  hover:-translate-y-1 duration-300'>REQUEST MANPOWER <FaArrowRight size={16} /></button>
           <div className='flex gap-3'>
           <a href="#quote">
-          <button className='border border-[#FFFFFF] w-28 h-10.25 text-[#FFFFFF] text-[13px] rounded-xl cursor-pointer'>GET QUOTE</button>
+          <button className='border border-[#FFFFFF] w-28 h-10.25 text-[#FFFFFF] text-[13px] rounded-xl cursor-pointer transition-all  hover:-translate-y-1 duration-300'>GET QUOTE</button>
           </a>
-            <button className='flex items-center justify-center gap-2 border border-[#FFFFFFA6] w-41.25 h-10.25 text-[#FFFFFFA6] text-[13px] rounded-xl'><FiDownload />COMPANY PROFILE</button>
+            <button className='flex items-center justify-center gap-2 border border-[#FFFFFFA6] w-41.25 h-10.25 text-[#FFFFFFA6] text-[13px] rounded-xl transition-all  hover:-translate-y-1 duration-300'><FiDownload />COMPANY PROFILE</button>
           </div>
         </div>
       </div>

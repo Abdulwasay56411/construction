@@ -29,7 +29,7 @@ const AboutUs = () => {
                             <button
                                 key={index}
                                 onClick={() => setIsActive(index)}
-                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}
+                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all  hover:-translate-y-1 duration-300 ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}
                             >
                                 {item.title}
                             </button>
@@ -53,8 +53,8 @@ const AboutUs = () => {
                     </div>
 
                     <div className='flex gap-2 py-5'>
-                        <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl'>REQUEST MANPOWER</button>
-                        <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl'>
+                        <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl transition-all  hover:-translate-y-1 duration-300'>REQUEST MANPOWER</button>
+                        <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl transition-all  hover:-translate-y-1 duration-300'>
                             <FiDownload size={16} />Download Profile
                         </button>
                     </div>

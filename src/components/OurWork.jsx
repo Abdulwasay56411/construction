@@ -21,7 +21,7 @@ const OurWork = () => {
                 <h1 className='text-[#000000] text-3xl md:text-[40px] font-extrabold'>Featured Projects</h1>
                 <div className='flex flex-wrap justify-center items-center gap-2'>
                   {btn.map((item) =>(
-                        <button onClick={() => setIsActive(item.id)} key={item.id} className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl transition-all duration-300 ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#000000] bg-[#F5F3F3] "}`}>{item.title}</button>
+                        <button onClick={() => setIsActive(item.id)} key={item.id} className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl   hover:-translate-y-1 duration-300 ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#000000] bg-[#F5F3F3] "}`}>{item.title}</button>
                   ))}
                 </div>
             </div>

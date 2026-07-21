@@ -13,7 +13,7 @@ const OurService = () => {
             <Heading text1={'OUR SERVICES'} text3={'Professional Workforce Solution'} para1={'From specialized engineering placements to large-scale labor mobilizationwe deliver the human capital that powers Saudi Arabia.'} />
             <div className='flex flex-col items-center lg:flex-row justify-center py-10 gap-5'>
                {buttonContent.map((item, index) => (
-                  <button key={item.id} onClick={() => setActiveTab(index)} className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl  ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}>{item.btn}</button>
+                  <button key={item.id} onClick={() => setActiveTab(index)} className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl transition-all  hover:-translate-y-1 duration-300 ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}>{item.btn}</button>
                ))}
             </div>
             <div className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'>
@@ -40,8 +40,8 @@ const OurService = () => {
                      ))}
                   </div>
                   <div className='flex items-center gap-3'>
-                     <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer'>Request This Service <FaArrowRight size={15} /> </button>
-                     <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer'>Learn More</button>
+                     <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Request This Service <FaArrowRight size={15} /> </button>
+                     <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Learn More</button>
                   </div>
                </div>
             </div>

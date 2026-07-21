@@ -11,8 +11,8 @@ const Ready = () => {
         workforce requirements. Fast, compliant, and professional.</p>
     </div> 
    <div className='flex flex-col sm:flex-row gap-3 py-4'>
-   <button className='w-54.5 h-11.5 text-[#D48E26] rounded-xl bg-[#FFFFFF] font-bold text-[12px]'>Request MANPOWER NOW</button>
-   <button className='flex justify-center items-center gap-2 border border-[#FFFFFF] w-54.5 sm:w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold'><IoCallOutline size={15}/> CALL: +988 50 000 0000</button>
+   <button className='w-54.5 h-11.5 text-[#D48E26] rounded-xl bg-[#FFFFFF] font-bold text-[12px] transition-all  hover:-translate-y-1 duration-300'>Request MANPOWER NOW</button>
+   <button className='flex justify-center items-center gap-2 border border-[#FFFFFF] w-54.5 sm:w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold transition-all  hover:-translate-y-1 duration-300'><IoCallOutline size={15}/> CALL: +988 50 000 0000</button>
    </div>
     </div>
   )
