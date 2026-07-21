@@ -4,7 +4,7 @@ import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
     const [isActive, setIsActive] = useState(0)
-    const [isOpen, setIsOpen] = useState(false) // Mobile menu state
+    const [isOpen, setIsOpen] = useState(false) 
 
     return (
         <div className='sticky top-0 z-50'>
@@ -51,9 +51,10 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop Buttons */}
-                    <div className='hidden lg:flex gap-3'>
-                        <button className='bg-[#D48E26] w-45 h-10 rounded-4xl font-semibold text-[12px] text-[#FFFFFF] cursor-pointer hover:scale-105 transition-all duration-500'>REQUEST MANPOWER</button>
-                        <button className='border border-[#000000] text-[12px] font-semibold w-27 h-10 rounded-4xl cursor-pointer hover:bg-black hover:text-white transition-all'>GET QUOTE</button>
+                    <div className='hidden lg:flex'>
+                      <a href="#quote">
+                      <button className='border border-[#000000] text-[12px] font-semibold w-27 h-10 rounded-4xl cursor-pointer hover:bg-black hover:text-white transition-all'>GET QUOTE</button>
+                      </a>
                     </div>
 
                     {/* Mobile Menu Icon */}
@@ -63,8 +64,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile Dropdown Menu Drawer with Smooth Transition */}
-            <div className={`lg:hidden absolute top-full left-0 w-full bg-[#F7F7F7] border-b border-gray-300 shadow-xl overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[500px] opacity-100 py-6 px-6' : 'max-h-0 opacity-0 py-0 px-6 pointer-events-none'}`}>
+            <div className={`lg:hidden absolute top-full left-0 w-full bg-[#F7F7F7] border-b border-gray-300 shadow-xl overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-125 opacity-100 py-6 px-6' : 'max-h-0 opacity-0 py-0 px-6 pointer-events-none'}`}>
                 <div className='flex flex-col gap-5'>
                     {navLink.map((item, index) => (
                         <a 
@@ -80,10 +80,11 @@ const Navbar = () => {
                         </a>
                     ))}
                     <hr className='border-gray-300 my-2' />
-                    <div className='flex flex-col gap-3'>
-                        <button onClick={() => setIsOpen(false)} className='bg-[#D48E26] w-full h-12 rounded-4xl font-bold text-sm text-[#FFFFFF] cursor-pointer'>REQUEST MANPOWER</button>
+                    <a href="#quote">
+                    onClick={() => setIsOpen(false)}
                         <button onClick={() => setIsOpen(false)} className='border border-[#000000] text-sm font-bold w-full h-12 rounded-4xl cursor-pointer bg-white'>GET QUOTE</button>
-                    </div>
+                    </a>
+                    
                 </div>
             </div>
         </div>

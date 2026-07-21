@@ -4,7 +4,7 @@ import { FiSend } from 'react-icons/fi'
 
 const GetInTouch = () => {
     return (
-        <div className='w-full bg-white'>
+        <div id='quote' className='w-full bg-white'>
             <div className='max-w-7xl mx-auto px-5 md:px-8 lg:px-10 pt-10 pb-20'>
                 <Heading text1={'GET IN TOUCH'} text2={'Request Manpower or Get a Quote'} para={'Tell us your requirements and our team will respond within 2 business hours with a tallored workforce solution.'} />
                 
