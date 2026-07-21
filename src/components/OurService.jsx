@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Heading from './Heading'
 import { FaArrowRight } from "react-icons/fa6";
+import { motion, AnimatePresence } from 'framer-motion';
 
 const OurService = () => {
 
@@ -8,43 +9,75 @@ const OurService = () => {
    const activeData = buttonContent[activeTab]
 
    return (
-      <div id='services' className='bg-[#1D1D1D] pt-5 pb-10 px-5 md:px-8 lg:px-10' >
+      <div id='services' className='bg-[#1D1D1D] pt-5 pb-10 px-5 md:px-8 lg:px-10 overflow-hidden' >
          <div className='max-w-350 mx-auto'>
-            <Heading text1={'OUR SERVICES'} text3={'Professional Workforce Solution'} para1={'From specialized engineering placements to large-scale labor mobilizationwe deliver the human capital that powers Saudi Arabia.'} />
-            <div className='flex flex-col items-center lg:flex-row justify-center py-10 gap-5'>
+            <motion.div
+               initial={{ opacity: 0, y: -20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6 }}
+               viewport={{ once: true }}
+            >
+               <Heading text1={'OUR SERVICES'} text3={'Professional Workforce Solution'} para1={'From specialized engineering placements to large-scale labor mobilizationwe deliver the human capital that powers Saudi Arabia.'} />
+            </motion.div>
+
+            {/* Tabs */}
+            <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               whileInView={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.6, delay: 0.2 }}
+               viewport={{ once: true }}
+               className='flex flex-col items-center lg:flex-row justify-center py-10 gap-5'
+            >
                {buttonContent.map((item, index) => (
-                  <button key={item.id} onClick={() => setActiveTab(index)} className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl transition-all  hover:-translate-y-1 duration-300 ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}>{item.btn}</button>
+                  <button 
+                     key={item.id} 
+                     onClick={() => setActiveTab(index)} 
+                     className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl transition-all hover:-translate-y-1 duration-300 ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}
+                  >
+                     {item.btn}
+                  </button>
                ))}
-            </div>
-            <div className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'>
-               <img className='max-w-143.5 w-full object-cover max-h-113.25 rounded-[15px] h-auto' src={activeData.image} alt="" />
-               <div className='hidden lg:absolute lg:top-12  lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl'>
-                  <img className='w-2.5 h-auto' src="/1star.png" alt="" />
-                  <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
-               </div>
-               <div>
-                  <div className='flex items-center gap-2 py-2 mb-2 justify-center rounded-xl px-2 bg-[#D48E2633] border border-[#D48E26] w-53 h-auto'>
-                     <img className='w-18 h-auto' src="/star.png" alt="" />
-                     <span className='text-[12px] font-medium text-[#D48E26]'>Primary Summary</span>
+            </motion.div>
+
+            {/* Content Section with Animation */}
+            <AnimatePresence mode="wait">
+               <motion.div 
+                  key={activeTab}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                  className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'
+               >
+                  <img className='max-w-143.5 w-full object-cover max-h-113.25 rounded-[15px] h-auto' src={activeData.image} alt="" />
+                  <div className='hidden lg:absolute lg:top-12 lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl'>
+                     <img className='w-2.5 h-auto' src="/1star.png" alt="" />
+                     <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
                   </div>
                   <div>
-                     <h1 className='text-[#FFFFFF] font-extrabold text-xl md:text-2xl lg:text-[28px] py-3'>{activeData.head}</h1>
-                     <p className='text-sm md:text-base lg:text-lg font-medium text-[#D1D1D1]'>{activeData.para}</p>
+                     <div className='flex items-center gap-2 py-2 mb-2 justify-center rounded-xl px-2 bg-[#D48E2633] border border-[#D48E26] w-53 h-auto'>
+                        <img className='w-18 h-auto' src="/star.png" alt="" />
+                        <span className='text-[12px] font-medium text-[#D48E26]'>Primary Summary</span>
+                     </div>
+                     <div>
+                        <h1 className='text-[#FFFFFF] font-extrabold text-xl md:text-2xl lg:text-[28px] py-3'>{activeData.head}</h1>
+                        <p className='text-sm md:text-base lg:text-lg font-medium text-[#D1D1D1]'>{activeData.para}</p>
+                     </div>
+                     <div className='grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] items-center gap-3 my-4'>
+                        {activeData.services.map((listItem, i) => (
+                           <div key={i} className='flex items-center gap-2'>
+                              <img className='w-3 h-3' src="/round.png" alt="" />
+                              <span className='text-[12px] md:text-sm font-medium text-[#D1D1D1]'>{listItem}</span>
+                           </div>
+                        ))}
+                     </div>
+                     <div className='flex items-center gap-3'>
+                        <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer transition-all hover:-translate-y-1 duration-300'>Request This Service <FaArrowRight size={15} /> </button>
+                        <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer transition-all hover:-translate-y-1 duration-300'>Learn More</button>
+                     </div>
                   </div>
-                  <div className='grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] items-center  gap-3 my-4'>
-                     {activeData.services.map((listItem, i) => (
-                        <div key={i} className='flex items-center gap-2'>
-                           <img className='w-3 h-3' src="/round.png" alt="" />
-                           <span key={i} className='text-[12px] md:text-sm font-medium text-[#D1D1D1]'>{listItem}</span>
-                        </div>
-                     ))}
-                  </div>
-                  <div className='flex items-center gap-3'>
-                     <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Request This Service <FaArrowRight size={15} /> </button>
-                     <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Learn More</button>
-                  </div>
-               </div>
-            </div>
+               </motion.div>
+            </AnimatePresence>
          </div>
       </div>
    )

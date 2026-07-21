@@ -1,22 +1,37 @@
 import React from 'react'
 import Heading from './Heading'
+import { motion } from 'framer-motion'
 
 const OurJourney = () => {
     return (
-        <div className='pb-10 px-5 md:px-8 lg:px-10'>
-            <div className='flex justify-center text-center'>
+        <div className='pb-10 px-5 md:px-8 lg:px-10 overflow-hidden'>
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className='flex justify-center text-center'
+            >
                 <Heading text1={'OUR JOURNEY'} text2={'Company Milestones'} />
-            </div>
+            </motion.div>
+            
             <div className='flex flex-wrap justify-center items-center lg:flex-nowrap gap-3 gap-y-8 my-5'>
                 {box.map((item, index) => (
-                    <div key={index} className='flex gap-3 w-[320px] h-35.75'>
+                    <motion.div 
+                        key={index} 
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.15 }}
+                        viewport={{ once: true }}
+                        className='flex gap-3 w-[320px] h-35.75'
+                    >
                         <img src={item.image} alt="" />
                         <div>
                             <h1 className='text-[#D48E26] font-black text-sm pb-2'>{item.title}</h1>
                             <h2 className='font-bold text-sm text-[#191E23]'>{item.head}</h2>
                             <p className='text-[#998A95] font-medium text-sm py-2'>{item.para}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

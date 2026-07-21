@@ -72,7 +72,9 @@ const AskedQuestion = () => {
             </div>
             <div className='flex flex-col items-center py-5'>
                 <p className='text-[#585858A6] text-sm font-medium'>Still have questions? Our team is ready to help.</p>
-                <button className='flex justify-center items-center gap-2 bg-[#D48E26] text-[#FFFFFF] rounded-xl w-38.75 h-11.75 mt-5 cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Contact Us <FaArrowRight size={15}/></button>
+      <a href="#quote">
+      <button className='flex justify-center items-center gap-2 bg-[#D48E26] text-[#FFFFFF] rounded-xl w-38.75 h-11.75 mt-5 cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Contact Us <FaArrowRight size={15}/></button>
+      </a>
             </div>
         </motion.div>
     )

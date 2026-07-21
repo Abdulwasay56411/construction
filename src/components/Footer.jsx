@@ -1,11 +1,18 @@
 import React from 'react'
 import { FiSend } from "react-icons/fi";
 import { FaChevronUp } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 const Footer = () => {
     return (
-        <div className='px-5 md:px-8 lg:px-16 pt-16 pb-8 bg-[#0D0D0D] shadow-[0_10px_15px_0_rgba(151,151,151,0.12)] border-t border-[#1F1F1F]'>
-            <div className='max-w-350 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-10 lg:gap-8'>
+        <div className='px-5 md:px-8 lg:px-16 pt-16 pb-8 bg-[#0D0D0D] shadow-[0_10px_15px_0_rgba(151,151,151,0.12)] border-t border-[#1F1F1F] overflow-hidden'>
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className='max-w-350 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-10 lg:gap-8'
+            >
 
                 {/* Column 1: Brand Info */}
                 <div>
@@ -81,10 +88,16 @@ const Footer = () => {
                     </div>
                 </div>
 
-            </div>
+            </motion.div>
 
             {/* Bottom Bar / Copyright */}
-            <div className='max-w-350 mx-auto mt-12 pt-6 border-t border-[#1A1A1A] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#737373]'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className='max-w-350 mx-auto mt-12 pt-6 border-t border-[#1A1A1A] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#737373]'
+            >
                 <p>2025 Telal Al Shaheqa Contracting Company. All rights reserved. CR: 1010012345</p>
                 <div className='flex items-center gap-6'>
                     <span className='hover:text-white cursor-pointer transition-colors'>Privacy Policy</span>
@@ -97,7 +110,7 @@ const Footer = () => {
                         <FaChevronUp size={12} />
                     </button>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

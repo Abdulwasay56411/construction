@@ -1,25 +1,52 @@
 import React from 'react'
 import Heading from './Heading'
 import { FaArrowRight } from "react-icons/fa6";
+import { motion } from 'framer-motion';
 
 const WorkForce = () => {
     return (
-        <div className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto'>
-            <Heading text1={'WORKFORCE SPECIALIZATION'} text2={'16 Manpower Categories'} para={'Covering every workforce requirement across all major industrial and commercial sectors in Saudi Arabia.'} />
+        <div className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto overflow-hidden'>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                <Heading text1={'WORKFORCE SPECIALIZATION'} text2={'16 Manpower Categories'} para={'Covering every workforce requirement across all major industrial and commercial sectors in Saudi Arabia.'} />
+            </motion.div>
+
             <div className='grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 justify-items-center lg:justify-items-start gap-5 mt-10 mb-5'>
-                {boxes.map((item) => (
-                    <div key={item.id} className='w-full h-30.75 rounded-[15px] bg-[#F5F3F3] flex flex-col text-center justify-center items-center'>
+                {boxes.map((item, index) => (
+                    <motion.div 
+                        key={item.id} 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: (index % 8) * 0.05 }}
+                        viewport={{ once: true }}
+                        className='w-full h-30.75 rounded-[15px] bg-[#F5F3F3] flex flex-col text-center justify-center items-center'
+                    >
                         <div className='w-10 h-10 bg-[#FFFFFF] rounded-full flex items-center justify-center'>
                             <img className='w-4.5 h-auto object-cover ' src={item.image} alt="" />
                         </div>
                         <h1 className='text-[12px] text-[#000000] font-bold py-1'>{item.head}</h1>
                         <p className='text-[#8D98A2] font-medium text-[10px]'>{item.para}</p>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
-            <div className='flex justify-center'>
-                <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2 transition-all  hover:-translate-y-1 duration-300'>REQUEST SPECIALIZED MANPOWER <FaArrowRight size={16} /> </button>
-            </div>
+
+            <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className='flex justify-center'
+            >
+               <a href="#quote">
+               <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2 transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
+                    REQUEST SPECIALIZED MANPOWER <FaArrowRight size={16} />
+                </button>
+               </a>
+            </motion.div>
         </div>
     )
 }

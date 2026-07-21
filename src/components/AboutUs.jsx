@@ -1,20 +1,35 @@
 import React, { useState } from 'react'
-import Heading from './Heading'
+import { motion } from 'framer-motion'
 import { FiDownload } from "react-icons/fi";
 
 const AboutUs = () => {
     const [isActive, setIsActive] = useState(0)
 
     return (
-        <div id='about'  className='py-10 px-5 md:px-8 lg:pl-10 max-w-350 mx-auto'>
-          <div className='flex items-center gap-3'>
-          <hr className='w-17.5 text-[#D48E26] h-0' />
-            <h1 className='text-[#D48E26] font-medium text-xl'>About US</h1>
-            <hr className='w-17.5 text-[#D48E26] h-0' />
-          </div>
-            <div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between'>
-                <div className='w-full lg:w-1/2 pt-6'>
-                    <h1 className='heading text-4xl lg:text-[50px] text-[#000000] font-black leading-12 sm:leading-14 '>
+        <div id='about' className='py-10 px-5 md:px-8 lg:pl-10 max-w-350 mx-auto overflow-hidden'>
+            {/* Header */}
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className='flex items-center gap-3'
+            >
+                <hr className='w-17.5 text-[#D48E26] h-0' />
+                <h1 className='text-[#D48E26] font-medium text-xl'>About US</h1>
+                <hr className='w-17.5 text-[#D48E26] h-0' />
+            </motion.div>
+
+            <div className='flex flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center'>
+                {/* Left Side Content */}
+                <motion.div 
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className='w-full lg:w-1/2 pt-6'
+                >
+                    <h1 className='heading text-4xl lg:text-[50px] text-[#000000] font-black leading-12 sm:leading-14'>
                         A Decade of Workforce Excellence in Saudi Arabia
                     </h1>
                     <p className='text-[#00000099] text-[12px] sm:text-lg font-normal py-3'>
@@ -29,7 +44,7 @@ const AboutUs = () => {
                             <button
                                 key={index}
                                 onClick={() => setIsActive(index)}
-                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all  hover:-translate-y-1 duration-300 ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}
+                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all hover:-translate-y-1 duration-300 ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}
                             >
                                 {item.title}
                             </button>
@@ -53,26 +68,48 @@ const AboutUs = () => {
                     </div>
 
                     <div className='flex gap-2 py-5'>
-                        <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl transition-all  hover:-translate-y-1 duration-300'>REQUEST MANPOWER</button>
-                        <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl transition-all  hover:-translate-y-1 duration-300'>
+                        <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl transition-all hover:-translate-y-1 duration-300 cursor-pointer'>REQUEST MANPOWER</button>
+                        <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
                             <FiDownload size={16} />Download Profile
                         </button>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Right Side Image Section */}
-                <div className='relative lg:left-6'>
+                <motion.div 
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className='relative lg:left-6 mt-10 lg:mt-0'
+                >
                     <img className='max-w-147 w-full h-auto object-contain' src="/About.png" alt="" />
-                    <div className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25'>
+                    
+                    {/* ISO Badge */}
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.5 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25'
+                    >
                         <h1 className='text-[#FFFFFF] font-extrabold text-2xl'>ISO</h1>
                         <span className='text-[#FFFFFFA6] font-semibold text-sm'>CERTIFIED</span>
-                    </div>
-                    <div className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)]'>
+                    </motion.div>
+
+                    {/* Experience Box */}
+                    <motion.div 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                        viewport={{ once: true }}
+                        className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)]'
+                    >
                         <h1 className='text-[#D48E26] font-extrabold text-2xl'>15+</h1>
                         <p className='text-[#000000] font-semibold text-sm'>Source Countries</p>
                         <span className='text-[#000000A6] font-normal text-[12px]'>Global talent network</span>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
             <hr className='text-[#00000026] mt-14' />
         </div>

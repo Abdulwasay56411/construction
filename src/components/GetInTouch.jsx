@@ -1,18 +1,32 @@
 import React from 'react'
 import Heading from './Heading'
 import { FiSend } from 'react-icons/fi'
+import { motion } from 'framer-motion'
 
 const GetInTouch = () => {
     return (
-        <div id='quote' className='w-full bg-white'>
+        <div id='quote' className='w-full bg-white overflow-hidden'>
             <div className='max-w-7xl mx-auto px-5 md:px-8 lg:px-10 pt-10 pb-20'>
-                <Heading text1={'GET IN TOUCH'} text2={'Request Manpower or Get a Quote'} para={'Tell us your requirements and our team will respond within 2 business hours with a tallored workforce solution.'} />
+                <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
+                >
+                    <Heading text1={'GET IN TOUCH'} text2={'Request Manpower or Get a Quote'} para={'Tell us your requirements and our team will respond within 2 business hours with a tallored workforce solution.'} />
+                </motion.div>
                 
                 {/* Main Content Layout */}
                 <div className='flex flex-col lg:flex-row gap-10 justify-center items-center lg:items-start mt-8'>
                     
                     {/* Left Side: Contact Details & Map */}
-                    <div className='w-full lg:w-auto flex flex-col items-center lg:items-start'>
+                    <motion.div 
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className='w-full lg:w-auto flex flex-col items-center lg:items-start'
+                    >
                         {/* Contact Details */}
                         <div className='w-full sm:w-92.5 bg-[#1D1D1D] rounded-[20px] px-7 py-8 shadow-md'>
                             <h1 className='text-xl font-extrabold text-[#FFFFFF] pb-4'>Contact Details</h1>
@@ -48,8 +62,15 @@ const GetInTouch = () => {
                                 ></iframe>
                             </a>
                         </div>
-                    </div>
-                    <div className='w-full lg:w-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-10'>
+                    </motion.div>
+
+                    <motion.div 
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className='w-full lg:w-auto grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-10'
+                    >
                         {Mail.map((item) => (
                             <div key={item.id} className='flex flex-col w-full'>
                                 <label className='text-xs font-semibold text-gray-700 mb-1'>{item.label}</label>
@@ -61,11 +82,11 @@ const GetInTouch = () => {
                             <textarea className='w-full h-32 p-4 bg-[#F3F3F3] border border-[#E6E6E6] rounded-lg outline-none resize-none' placeholder='Describe your manpower requirements, project scope, timeline and any specific qualification needed...'></textarea>
                         </div>
                         <div className='sm:col-span-2'>
-                            <button className='w-full h-12 bg-[#D48E26] text-white font-bold rounded-lg tracking-wider hover:bg-[#b8771e] transition-all flex justify-center items-center gap-2  hover:-translate-y-1 duration-300'>
-                              <FiSend size={16} />  SEND MESSAGE
+                            <button className='w-full h-12 bg-[#D48E26] text-white font-bold rounded-lg tracking-wider hover:bg-[#b8771e] transition-all flex justify-center items-center gap-2 hover:-translate-y-1 duration-300 cursor-pointer'>
+                              <FiSend size={16} /> SEND MESSAGE
                             </button>
                         </div>
-                    </div>
+                    </motion.div>
 
                 </div>
             </div>

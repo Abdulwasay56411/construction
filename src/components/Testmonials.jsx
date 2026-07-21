@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Heading from './Heading';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,23 +14,40 @@ const Testimonials = () => {
     };
 
     return (
-        <div className='px-5 md:px-8 lg:px-10 py-10 bg-[#1D1D1D]'>
-            <Heading text1={'TESTIMONIALS'} text3={'What Our Clients Say'} />
+        <div className='px-5 md:px-8 lg:px-10 py-10 bg-[#1D1D1D] overflow-hidden'>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                <Heading text1={'TESTIMONIALS'} text3={'What Our Clients Say'} />
+            </motion.div>
 
             <div className='flex flex-col items-center justify-center mt-10'>
-                {/* Testimonial Card */}
-                <div className='border border-[#383635] rounded-[20px] max-w-3xl w-full p-8 md:p-12 text-center'>
-                    <div className='text-[#D48E26] text-2xl mb-6'>★</div>
-                    <p className='text-[#FFFFFF] text-sm sm:text-base md:text-xl font-medium leading-relaxed mb-8'>
-                        "{clientSays[currentIndex].para}"
-                    </p>
-                    <h3 className='text-[#D48E26] font-bold text-base'>{clientSays[currentIndex].title}</h3>
-                    <p className='text-[#B8BBBA] text-sm font-medium'>{clientSays[currentIndex].text}</p>
+                {/* Testimonial Card with Animation */}
+                <div className='border border-[#383635] rounded-[20px] max-w-3xl w-full p-8 md:p-12 text-center overflow-hidden'>
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={currentIndex}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.4 }}
+                        >
+                            <div className='text-[#D48E26] text-2xl mb-6'>★</div>
+                            <p className='text-[#FFFFFF] text-sm sm:text-base md:text-xl font-medium leading-relaxed mb-8'>
+                                "{clientSays[currentIndex].para}"
+                            </p>
+                            <h3 className='text-[#D48E26] font-bold text-base'>{clientSays[currentIndex].title}</h3>
+                            <p className='text-[#B8BBBA] text-sm font-medium'>{clientSays[currentIndex].text}</p>
+                        </motion.div>
+                    </AnimatePresence>
                 </div>
 
                 {/* Navigation Controls */}
                 <div className='flex items-center gap-4 mt-8'>
-                    <button onClick={prevTestimonial} className='border border-[#383635] w-10.25 h-10.25 text-white p-2 rounded-full hover:bg-[#383635]'>
+                    <button onClick={prevTestimonial} className='border border-[#383635] w-10.25 h-10.25 text-white p-2 rounded-full hover:bg-[#383635] cursor-pointer'>
                         &lt;
                     </button>
 
@@ -42,7 +60,7 @@ const Testimonials = () => {
                         ))}
                     </div>
 
-                    <button onClick={nextTestimonial} className='border border-[#8E8A8A] w-10.25 h-10.25  text-white p-2 rounded-full hover:bg-[#383635]'>
+                    <button onClick={nextTestimonial} className='border border-[#8E8A8A] w-10.25 h-10.25 text-white p-2 rounded-full hover:bg-[#383635] cursor-pointer'>
                         &gt;
                     </button>
                 </div>

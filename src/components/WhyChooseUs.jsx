@@ -1,19 +1,35 @@
 import React from 'react'
 import Heading from './Heading'
+import { motion } from 'framer-motion'
 
 const WhyChooseUs = () => {
     return (
-        <div className='px-5 md:px-8 lg:px-10 pt-5 pb-10 bg-[#F7F7F7]'>
-            <Heading text1={'WHY CHOOSE US'} text2={'The Telal AI Shaheqa Advantage'} para={'Ten reasons why Saudi Arabia’s leading companies choose us as their manpower partner year after year.'} />
-            <div className='grid grid-cols-2  sm:grid-cols-3  md:grid-cols-4 xl:grid-cols-5 justify-center gap-5 py-10 max-w-350 mx-auto'>
-                {whyChooseBox.map((item) => (
-                    <div key={item.id} className='w-full h-auto rounded-[18px] border border-[#0000001F] shadow-[0_0_12px_rgba(0,0,0,0.04)] px-3 sm:px-4 lg:px-5 py-3 sm:py-5 lg:py-8'>
-                        <div className='flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11  lg:w-13.5 lg:h-13.5 bg-[#D48E261F] rounded-2xl'>
+        <div className='px-5 md:px-8 lg:px-10 pt-5 pb-10 bg-[#F7F7F7] overflow-hidden'>
+            <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+            >
+                <Heading text1={'WHY CHOOSE US'} text2={'The Telal AI Shaheqa Advantage'} para={'Ten reasons why Saudi Arabia’s leading companies choose us as their manpower partner year after year.'} />
+            </motion.div>
+
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 justify-center gap-5 py-10 max-w-350 mx-auto'>
+                {whyChooseBox.map((item, index) => (
+                    <motion.div 
+                        key={item.id} 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.08 }}
+                        viewport={{ once: true }}
+                        className='w-full h-auto rounded-[18px] border border-[#0000001F] shadow-[0_0_12px_rgba(0,0,0,0.04)] px-3 sm:px-4 lg:px-5 py-3 sm:py-5 lg:py-8 bg-white'
+                    >
+                        <div className='flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 lg:w-13.5 lg:h-13.5 bg-[#D48E261F] rounded-2xl'>
                             <img className='w-4 sm:w-4.5 lg:w-5 object-cover h-auto' src={item.image} alt="" />
                         </div>
-                           <h1 className='text-[#000000] font-bold text-[12px]  sm:text-sm lg:text-base pt-3 pb-2'>{item.title}</h1>
-                           <p className='text-[#616161] text-[10px] sm:text-[12px] lg:text-sm font-normal'>{item.para}</p>
-                    </div>
+                        <h1 className='text-[#000000] font-bold text-[12px] sm:text-sm lg:text-base pt-3 pb-2'>{item.title}</h1>
+                        <p className='text-[#616161] text-[10px] sm:text-[12px] lg:text-sm font-normal'>{item.para}</p>
+                    </motion.div>
                 ))}
             </div>
         </div>
