@@ -47,10 +47,12 @@ const OurService = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
-                  className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5'
+                  className='lg:relative flex flex-wrap justify-center lg:flex-nowrap gap-5 py-5 items-center'
                >
-                  <img className='max-w-143.5 w-full object-cover max-h-113.25 rounded-[15px] h-auto' src={activeData.image} alt="" />
-                  <div className='hidden lg:absolute lg:top-12 lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl'>
+                  <div className='max-w-143.5 w-full max-h-113.25 rounded-[15px] overflow-hidden group cursor-pointer'>
+                     <img className='w-full h-auto object-cover max-h-113.25 rounded-[15px] transition-transform duration-500 group-hover:scale-105' src={activeData.image} alt="" />
+                  </div>
+                  <div className='hidden lg:absolute lg:top-12 lg:left-8 bg-[#D48E26] w-35.5 h-10 lg:flex justify-center items-center gap-2 rounded-xl z-10'>
                      <img className='w-2.5 h-auto' src="/1star.png" alt="" />
                      <h1 className='text-[12px] font-bold text-[#FFFFFF]'>CORE SERVICES</h1>
                   </div>

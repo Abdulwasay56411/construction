@@ -85,10 +85,10 @@ const AboutUs = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className='relative lg:left-6 mt-10 lg:mt-0 group'
+                    className='relative lg:left-6 mt-10 lg:mt-0 group cursor-pointer'
                 >
-                    <div className='overflow-hidden rounded-[20px]'>
-                        <img className='max-w-147 w-full h-auto object-contain transition-transform duration-500 group-hover:scale-95' src="/About.png" alt="" />
+                    <div className='overflow-hidden rounded-[20px] w-full h-full'>
+                        <img className='max-w-147 w-full h-auto object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105' src="/About.png" alt="" />
                     </div>
                     
                     {/* ISO Badge */}
@@ -97,7 +97,7 @@ const AboutUs = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                         viewport={{ once: true }}
-                        className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25 shadow-[0_10px_25px_rgba(212,142,38,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(212,142,38,0.6)] cursor-pointer'
+                        className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25 shadow-[0_10px_25px_rgba(212,142,38,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(212,142,38,0.6)] cursor-pointer z-10'
                     >
                         <h1 className='text-[#FFFFFF] font-extrabold text-2xl'>ISO</h1>
                         <span className='text-[#FFFFFFA6] font-semibold text-sm'>CERTIFIED</span>
@@ -109,7 +109,7 @@ const AboutUs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                         viewport={{ once: true }}
-                        className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] cursor-pointer'
+                        className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] cursor-pointer z-10'
                     >
                         <h1 className='text-[#D48E26] font-extrabold text-2xl'>15+</h1>
                         <p className='text-[#000000] font-semibold text-sm'>Source Countries</p>
