@@ -1,7 +1,6 @@
 import React from 'react'
-import { FiDownload } from "react-icons/fi";
 import { FaArrowRight } from "react-icons/fa6";
-import { motion, useInView } from 'framer-motion';
+import { useInView, motion } from 'framer-motion';
 import { useRef } from 'react';
 
 const Counter = ({ value, suffix }) => {
@@ -37,12 +36,11 @@ const HeroSection = () => {
       {/* Hero Section */}
       <div className='w-full h-160 lg:h-210 flex flex-col justify-center px-5 md:px-8 lg:px-10 max-w-350 mx-auto'>
         
-        {/* Top Tag */}
+        {/* Top Badge */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
           className='flex items-center gap-2 py-2 lg:gap-4 justify-center rounded-4xl px-2 bg-[#D48E2629] border border-[#D48E26] w-51.5 sm:w-111.75 h-auto'
         >
           <img className='w-15.5 h-2.5' src="/star.png" alt="" />
@@ -51,10 +49,9 @@ const HeroSection = () => {
 
         {/* Heading & Paragraph */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className='lg:max-w-210 py-5'
         >
           <h1 className='heading font-black text-[34px] sm:text-5xl md:text-6xl lg:text-7xl leading-12 sm:leading-16 md:leading-18 lg:leading-22 text-[#FFFFFF]'>
@@ -68,19 +65,25 @@ const HeroSection = () => {
         {/* Button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
         >
-          <button className='flex items-center justify-center gap-2 border border-[#FFFFFFA6] w-41.25 h-10.25 text-[#FFFFFFA6] text-[13px] rounded-xl transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
-            <FiDownload />COMPANY PROFILE
+          <button className='flex items-center justify-center gap-2 w-49.75 h-10.25 bg-[#D48E26] text-[#FFFFFF] font-bold text-[13px] rounded-xl transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)] duration-300 cursor-pointer'>
+            REQUEST MANPOWER <FaArrowRight size={16} />
           </button>
         </motion.div>
+
       </div>
 
       {/* Stats Section */}
       <div className='bg-[#111111F2] h-auto py-8'>
-        <div className='w-full max-w-350 mx-auto text-center grid grid-cols-2 lg:grid-cols-5 items-center justify-items-center gap-y-8'>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className='w-full max-w-350 mx-auto text-center grid grid-cols-2 lg:grid-cols-5 items-center justify-items-center gap-y-8'
+        >
           {[
             { number: "10", title: "YEARS OF EXPERIENCE", suffix: "+" },
             { number: "1500", title: "DEPLOYED PROFESSIONALS", suffix: "+" },
@@ -88,21 +91,17 @@ const HeroSection = () => {
             { number: "100", title: "CORPORATE CLIENTS", suffix: "+" },
             { number: "99", title: "CLIENT SATISFACTION", suffix: "%" },
           ].map((item, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
               className={`flex text-center flex-col items-center text-white ${index === 4 ? 'col-span-2 lg:col-span-1' : ''}`}
             >
               <span className='font text-[40px] font-normal text-[#D48E26]'>
                 <Counter value={item.number} suffix={item.suffix} />
               </span>
               <span className='text-[15px] mt-2 text-[#FFFFFFA6]'>{item.title}</span>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   )

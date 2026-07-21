@@ -14,7 +14,7 @@ const Industries = () => {
             <Heading text1={'INDUSTRIES WE SERVE'} text2={'Powering Every Sector'} para={'From upstream oil & gas to urban infrastructure our workforce solutions serve every major industry shaping Saudi Arabia.'}/>
         </motion.div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 lg:grid-cols-3 py-8 max-w-350 mx-auto'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6 lg:grid-cols-3 py-8 max-w-350 mx-auto'>
           {imgBox.map((item, index) =>(
             <motion.div 
                 key={item.id}
@@ -22,9 +22,15 @@ const Industries = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                 viewport={{ once: true }}
-                className='w-full'
+                className='w-full rounded-[20px] overflow-hidden bg-white shadow-[0_4px_20px_rgba(0,0,0,0.06)] transition-all  hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] group cursor-pointer'
             >
-                <img className='w-full h-auto object-cover rounded-[15px]' src={item.image} alt="" />
+                <div className='overflow-hidden w-full h-full'>
+                    <img 
+                        className='w-full h-auto object-cover rounded-[20px] transition-transform duration-500 group-hover:scale-105' 
+                        src={item.image} 
+                        alt="Industry" 
+                    />
+                </div>
             </motion.div>
           ))}
         </div>

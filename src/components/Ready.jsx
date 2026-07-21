@@ -28,10 +28,10 @@ const Ready = () => {
         viewport={{ once: true }}
         className='flex flex-col sm:flex-row gap-3 py-4'
       >
-        <button className='w-54.5 h-11.5 text-[#D48E26] rounded-xl bg-[#FFFFFF] font-bold text-[12px] transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
+        <button className='w-54.5 h-11.5 text-[#D48E26] rounded-xl bg-[#FFFFFF] font-bold text-[12px] transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(255,255,255,0.4)] duration-300 cursor-pointer'>
           Request MANPOWER NOW
         </button>
-        <button className='flex justify-center items-center gap-2 border border-[#FFFFFF] w-54.5 sm:w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
+        <button className='flex justify-center items-center gap-2 border border-[#FFFFFF] w-54.5 sm:w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(255,255,255,0.4)] duration-300 cursor-pointer'>
           <IoCallOutline size={15}/> CALL: +988 50 000 0000
         </button>
       </motion.div>

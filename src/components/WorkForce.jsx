@@ -23,9 +23,10 @@ const WorkForce = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: (index % 8) * 0.05 }}
                         viewport={{ once: true }}
-                        className='w-full h-30.75 rounded-[15px] bg-[#F5F3F3] flex flex-col text-center justify-center items-center'
+                        className='w-full h-30.75 rounded-[15px] bg-[#F5F3F3] border border-transparent flex flex-col text-center justify-center items-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,0,0,0.08)] hover:border-[#D48E2640] group cursor-pointer'
                     >
-                        <div className='w-10 h-10 bg-[#FFFFFF] rounded-full flex items-center justify-center'>
+                        {/* Inner Icon Box with border/bg change on group hover */}
+                        <div className='w-10 h-10 bg-[#FFFFFF] border border-transparent rounded-full flex items-center justify-center transition-all duration-300 group-hover:border-[#D48E26] group-hover:bg-[#D48E261F]'>
                             <img className='w-4.5 h-auto object-cover ' src={item.image} alt="" />
                         </div>
                         <h1 className='text-[12px] text-[#000000] font-bold py-1'>{item.head}</h1>
@@ -42,7 +43,7 @@ const WorkForce = () => {
                 className='flex justify-center'
             >
                <a href="#quote">
-               <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2 transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
+               <button className='bg-[#D48E26] text-[12px] font-bold text-[#FFFFFF] w-75 h-12.5 rounded-xl flex items-center justify-center gap-2 transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)] duration-300 cursor-pointer'>
                     REQUEST SPECIALIZED MANPOWER <FaArrowRight size={16} />
                 </button>
                </a>

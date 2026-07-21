@@ -8,12 +8,12 @@ const OurWork = () => {
     const activeTile = btn.find(b => b.id === isActive).title
 
     const filteredProjects = isActive === 1
-     ? project.find(p => p.category === "All").image
-     : project.find(p => p.category === activeTile)?.image || []; 
+        ? project.find(p => p.category === "All").image
+        : project.find(p => p.category === activeTile)?.image || [];
 
     return (
         <div id='projects' className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto overflow-hidden'>
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
@@ -25,7 +25,7 @@ const OurWork = () => {
                 <hr className='w-17.5 sm:w-17.5 text-[#D48E26] h-0' />
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -34,20 +34,20 @@ const OurWork = () => {
             >
                 <h1 className='text-[#000000] text-3xl md:text-[40px] font-extrabold'>Featured Projects</h1>
                 <div className='flex flex-wrap justify-center items-center gap-2'>
-                  {btn.map((item) =>(
-                        <button 
-                            onClick={() => setIsActive(item.id)} 
-                            key={item.id} 
-                            className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl hover:-translate-y-1 duration-300 ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#000000] bg-[#F5F3F3]"}`}
+                    {btn.map((item) => (
+                        <button
+                            onClick={() => setIsActive(item.id)}
+                            key={item.id}
+                            className={`text-[13px] px-4 py-2 cursor-pointer font-bold rounded-xl hover:-translate-y-1 duration-300 ${isActive === item.id ? "bg-[#D48E26] text-[#FFFFFF] shadow-[0_10px_25px_rgba(212,142,38,0.4)]" : "text-[#000000] bg-[#F5F3F3]"}`}
                         >
                             {item.title}
                         </button>
-                  ))}
+                    ))}
                 </div>
             </motion.div>
 
             <AnimatePresence mode="wait">
-                <motion.div 
+                <motion.div
                     key={isActive}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -55,25 +55,37 @@ const OurWork = () => {
                     transition={{ duration: 0.4 }}
                     className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-10 gap-4'
                 >
-                    {Array.isArray(filteredProjects) ? filteredProjects.map((img, index) =>(
-                        <motion.img 
+                    {Array.isArray(filteredProjects) ? filteredProjects.map((img, index) => (
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
-                            className='w-full h-auto object-contain rounded-[15px]' 
-                            key={index} 
-                            src={img} 
-                            alt="" 
-                        />
+                            key={index}
+                            className='overflow-hidden rounded-[15px] group cursor-pointer'
+                        >
+                            <div className='overflow-hidden w-full h-full rounded-[15px]'>
+                                <img
+                                    className='w-full h-auto object-contain rounded-[15px] transition-transform duration-500 group-hover:scale-105'
+                                    src={img}
+                                    alt=""
+                                />
+                            </div>
+                        </motion.div>
                     ))
-                    : <motion.img 
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className='w-full h-auto object-contain rounded-[15px]'
-                        src={filteredProjects} 
-                        alt="" 
-                      />
+                        : <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                            className='overflow-hidden rounded-[15px] group cursor-pointer'
+                          >
+                              <div className='overflow-hidden w-full h-full rounded-[15px]'>
+                                  <img
+                                      className='w-full h-auto object-contain rounded-[15px] transition-transform duration-500 group-hover:scale-105'
+                                      src={filteredProjects}
+                                      alt=""
+                                  />
+                              </div>
+                          </motion.div>
                     }
                 </motion.div>
             </AnimatePresence>
@@ -112,32 +124,32 @@ const btn = [
 
 const project = [
     {
-        id: 1, 
+        id: 1,
         category: "All",
         image: ["/commerc.png", "/indus.png", "/oil&gas.png", "/infra.png", "/construc.png", "/commerc1.png", "/indus1.png", "/oil&gas1.png"],
     },
     {
-        id: 2, 
+        id: 2,
         category: "Construction",
         image: "/construc.png",
     },
     {
-        id: 3, 
+        id: 3,
         category: "oil & Gas",
         image: ["/oil&gas.png", "/oil&gas1.png"],
     },
     {
-        id: 4, 
+        id: 4,
         category: "Industrial",
         image: ["/indus.png", "/indus1.png"],
     },
     {
-        id: 5, 
+        id: 5,
         category: "Infrastructure",
         image: "/infra.png",
     },
     {
-        id: 6, 
+        id: 6,
         category: "Commercial",
         image: ["/commerc.png", "/commerc1.png"],
     }

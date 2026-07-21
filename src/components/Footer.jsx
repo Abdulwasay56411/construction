@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const Footer = () => {
     return (
         <div className='px-5 md:px-8 lg:px-16 pt-16 pb-8 bg-[#0D0D0D] shadow-[0_10px_15px_0_rgba(151,151,151,0.12)] border-t border-[#1F1F1F] overflow-hidden'>
-            <motion.div
+            <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -23,7 +23,7 @@ const Footer = () => {
                     </p>
                     <div className='flex gap-2.5 py-5'>
                         {btn.map((item) => (
-                            <button key={item.id} className='bg-[#1F1F1F] hover:bg-[#D48E26] hover:text-white transition-colors duration-300 w-9 h-9 rounded-[10px] flex items-center justify-center text-[12px] font-semibold text-[#A9A7A7] cursor-pointer'>
+                            <button key={item.id} className='bg-[#1F1F1F] hover:bg-[#D48E26] hover:text-white transition-colors duration-300 w-9 h-9 rounded-[10px] flex items-center justify-center text-[12px] font-semibold text-[#A9A7A7] cursor-pointer hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)]'>
                                 {item.text}
                             </button>
                         ))}
@@ -81,7 +81,7 @@ const Footer = () => {
                                 placeholder="Your email"
                                 className='bg-transparent text-xs text-white px-3 py-2 outline-none w-full placeholder:text-[#6B7280]'
                             />
-                            <button className='bg-[#D48E26] hover:bg-[#c27f1f] text-white w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer transition-colors shrink-0'>
+                            <button className='bg-[#D48E26] hover:bg-[#c27f1f] text-white w-9 h-9 rounded-lg flex items-center justify-center cursor-pointer transition-colors shrink-0 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)]'>
                                 <FiSend size={14} />
                             </button>
                         </div>
@@ -91,21 +91,21 @@ const Footer = () => {
             </motion.div>
 
             {/* Bottom Bar / Copyright */}
-            <motion.div
+            <motion.div 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className='max-w-350 mx-auto mt-12 pt-6 border-t border-[#1A1A1A] flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-[#737373]'
+                className='max-w-350 mx-auto mt-12 pt-6 border-t border-[#1A1A1A] flex flex-col md:flex-row items-center justify-between gap-4 text-[8.5px] sm:text-[11px] text-[#737373]'
             >
                 <p>2025 Telal Al Shaheqa Contracting Company. All rights reserved. CR: 1010012345</p>
                 <div className='flex items-center gap-6'>
-                    <span className='hover:text-white cursor-pointer transition-colors'>Privacy Policy</span>
+                    <span className='hover:text-white cursor-pointer transition-colors '>Privacy Policy</span>
                     <span className='hover:text-white cursor-pointer transition-colors'>Terms of Services</span>
                     <span className='hover:text-white cursor-pointer transition-colors'>Cookie Policy</span>
                     <button
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                        className='bg-[#1A1A1A] hover:bg-[#D48E26] hover:text-white transition-colors w-8 h-8 rounded-full flex items-center justify-center text-[#A9A7A7] cursor-pointer ml-2'
+                        className='bg-[#1A1A1A] hover:bg-[#D48E26] hover:text-white transition-colors w-8 h-8 rounded-full flex items-center justify-center text-[#A9A7A7] cursor-pointer ml-2 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)]'
                     >
                         <FaChevronUp size={12} />
                     </button>

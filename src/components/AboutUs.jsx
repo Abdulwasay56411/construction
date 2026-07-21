@@ -44,7 +44,7 @@ const AboutUs = () => {
                             <button
                                 key={index}
                                 onClick={() => setIsActive(index)}
-                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all hover:-translate-y-1 duration-300 ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF]" : "text-[#939393]"}`}
+                                className={`text-base font-semibold w-45 rounded-[10px] h-11 cursor-pointer transition-all hover:-translate-y-1 duration-300 ${index === isActive ? "bg-[#D48E26] text-[#FFFFFF] shadow-[0_10px_25px_rgba(212,142,38,0.4)]" : "text-[#939393]"}`}
                             >
                                 {item.title}
                             </button>
@@ -68,10 +68,14 @@ const AboutUs = () => {
                     </div>
 
                     <div className='flex gap-2 py-5'>
-                        <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl transition-all hover:-translate-y-1 duration-300 cursor-pointer'>REQUEST MANPOWER</button>
-                        <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl transition-all hover:-translate-y-1 duration-300 cursor-pointer'>
-                            <FiDownload size={16} />Download Profile
-                        </button>
+                        <a href="#quote">
+                            <button className='text-[12px] font-bold bg-[#D48E26] text-[#FFFFFF] w-43 h-10 rounded-xl transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)] duration-300 cursor-pointer flex items-center justify-center'>REQUEST MANPOWER</button>
+                        </a>
+                        <a href="#quote">
+                            <button className='flex justify-center items-center gap-2 text-[12px] font-bold border border-[#00000040] text-[#191E23] w-40 h-10 rounded-xl transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(0,0,0,0.15)] duration-300 cursor-pointer'>
+                                <FiDownload size={16} />Download Profile
+                            </button>
+                        </a>
                     </div>
                 </motion.div>
 
@@ -81,9 +85,11 @@ const AboutUs = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className='relative lg:left-6 mt-10 lg:mt-0'
+                    className='relative lg:left-6 mt-10 lg:mt-0 group'
                 >
-                    <img className='max-w-147 w-full h-auto object-contain' src="/About.png" alt="" />
+                    <div className='overflow-hidden rounded-[20px]'>
+                        <img className='max-w-147 w-full h-auto object-contain transition-transform duration-500 group-hover:scale-95' src="/About.png" alt="" />
+                    </div>
                     
                     {/* ISO Badge */}
                     <motion.div 
@@ -91,7 +97,7 @@ const AboutUs = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                         viewport={{ once: true }}
-                        className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25'
+                        className='absolute top-0 sm:top-3 right-8 sm:right-12 flex flex-col justify-center items-center bg-[#D48E26] rounded-[20px] w-27 h-21.25 shadow-[0_10px_25px_rgba(212,142,38,0.4)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(212,142,38,0.6)] cursor-pointer'
                     >
                         <h1 className='text-[#FFFFFF] font-extrabold text-2xl'>ISO</h1>
                         <span className='text-[#FFFFFFA6] font-semibold text-sm'>CERTIFIED</span>
@@ -103,7 +109,7 @@ const AboutUs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.5 }}
                         viewport={{ once: true }}
-                        className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)]'
+                        className='absolute bg-[#FFFFFF] flex flex-col justify-center rounded-[20px] px-6 w-46 h-28 bottom-0 left-0 sm:left-3 shadow-[0_0_18px_0_rgba(0,0,0,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] cursor-pointer'
                     >
                         <h1 className='text-[#D48E26] font-extrabold text-2xl'>15+</h1>
                         <p className='text-[#000000] font-semibold text-sm'>Source Countries</p>

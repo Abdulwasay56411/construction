@@ -68,9 +68,9 @@ const OurClient = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.08 }}
                             viewport={{ once: true }}
-                            className='w-full h-auto p-5 border border-[#E0DFDF] bg-[#F7F7F7] flex flex-col justify-center text-center items-center rounded-[15px]'
+                            className='w-full h-auto p-5 border border-[#E0DFDF] bg-[#F7F7F7] flex flex-col justify-center text-center items-center rounded-[15px] group cursor-pointer transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:bg-white'
                         >
-                            <div className='flex justify-center items-center w-12.5 h-12 bg-[#D48E26] rounded-[14px]'>
+                            <div className='flex justify-center items-center w-12.5 h-12 bg-[#D48E26] rounded-[14px] transition-transform duration-300 group-hover:scale-110 shadow-md'>
                                 <img className='w-7.5 h-7.5' src={item.image} alt="" />
                             </div>
                             <h1 className='font-bold text-[12px] py-2 text-[#000000]'>{item.title}</h1>

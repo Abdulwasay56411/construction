@@ -32,7 +32,7 @@ const OurService = () => {
                   <button 
                      key={item.id} 
                      onClick={() => setActiveTab(index)} 
-                     className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl transition-all hover:-translate-y-1 duration-300 ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}
+                     className={`w-52 h-10 text-[12px] cursor-pointer rounded-xl transition-all hover:-translate-y-1 duration-300 ${activeTab === index ? "bg-[#D48E26] text-[#FFFFFF] font-bold shadow-[0_10px_25px_rgba(212,142,38,0.4)]" : "bg-[#242424] text-[#A7A7A7] font-medium"}`}
                   >
                      {item.btn}
                   </button>
@@ -72,8 +72,12 @@ const OurService = () => {
                         ))}
                      </div>
                      <div className='flex items-center gap-3'>
-                        <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer transition-all hover:-translate-y-1 duration-300'>Request This Service <FaArrowRight size={15} /> </button>
-                        <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer transition-all hover:-translate-y-1 duration-300'>Learn More</button>
+                        <a href="#quote">
+                           <button className='flex items-center justify-center gap-2 bg-[#D48E26] w-48 h-10 text-[#FFFFFF] text-[12px] font-bold rounded-xl cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)] duration-300'>Request This Service <FaArrowRight size={15} /> </button>
+                        </a>
+                        <a href="#quote">
+                           <button className='border border-[#E4DFDF] w-27 h-10 rounded-xl font-semibold text-[10px] md:text-[12px] text-[#E4DFDF] cursor-pointer transition-all hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(255,255,255,0.15)] duration-300'>Learn More</button>
+                        </a>
                      </div>
                   </div>
                </motion.div>

@@ -58,9 +58,9 @@ const AskedQuestion = () => {
                                     onClick={() => setIsOpen(isOpen === item.id ? null : item.id)}
                                     className='shrink-0 flex justify-center items-center w-9 h-9 rounded-full cursor-pointer bg-[]'
                                 >
-                                  <div className={`transition-transform duration-300 w-8.5 h-8.5 select-none rounded-full flex justify-center items-center ${isOpen === item.id ? "rotate-1 bg-[#D48E26] text-[#FFFFFF]" : "rotate-0 bg-[#F0F0EF] text-[#000000]"}`}>
-                                      {isOpen === item.id ? <IoIosArrowUp/>  : <IoIosArrowDown/>}
-                                  </div>
+                                    <div className={`transition-transform duration-300 w-8.5 h-8.5 select-none rounded-full flex justify-center items-center ${isOpen === item.id ? "rotate-1 bg-[#D48E26] text-[#FFFFFF]" : "rotate-0 bg-[#F0F0EF] text-[#000000]"}`}>
+                                        {isOpen === item.id ? <IoIosArrowUp/>  : <IoIosArrowDown/>}
+                                    </div>
                                 </div>
                             </div>
                             <div className={`grid transition-all duration-300 ease-in-out select-none ${isOpen === item.id ? "grid-rows-[1fr] opacity-100 mt-4" : "grid-rows-[0fr] opacity-0"}`}>
@@ -73,7 +73,7 @@ const AskedQuestion = () => {
             <div className='flex flex-col items-center py-5'>
                 <p className='text-[#585858A6] text-sm font-medium'>Still have questions? Our team is ready to help.</p>
       <a href="#quote">
-      <button className='flex justify-center items-center gap-2 bg-[#D48E26] text-[#FFFFFF] rounded-xl w-38.75 h-11.75 mt-5 cursor-pointer transition-all  hover:-translate-y-1 duration-300'>Contact Us <FaArrowRight size={15}/></button>
+      <button className='flex justify-center items-center gap-2 bg-[#D48E26] text-[#FFFFFF] rounded-xl w-38.75 h-11.75 mt-5 cursor-pointer transition-all  hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(212,142,38,0.4)] duration-300'>Contact Us <FaArrowRight size={15}/></button>
       </a>
             </div>
         </motion.div>

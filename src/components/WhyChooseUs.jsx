@@ -22,9 +22,10 @@ const WhyChooseUs = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.08 }}
                         viewport={{ once: true }}
-                        className='w-full h-auto rounded-[18px] border border-[#0000001F] shadow-[0_0_12px_rgba(0,0,0,0.04)] px-3 sm:px-4 lg:px-5 py-3 sm:py-5 lg:py-8 bg-white'
+                        className='w-full h-auto rounded-[18px] border border-[#0000001F] shadow-[0_0_12px_rgba(0,0,0,0.04)] px-3 sm:px-4 lg:px-5 py-3 sm:py-5 lg:py-8 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,0,0,0.08)] group cursor-pointer'
                     >
-                        <div className='flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 lg:w-13.5 lg:h-13.5 bg-[#D48E261F] rounded-2xl'>
+                        {/* Inner Icon Box with border/bg change on group hover */}
+                        <div className='flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 lg:w-13.5 lg:h-13.5 bg-[#D48E261F] border border-transparent rounded-2xl transition-all duration-300 group-hover:border-[#D48E26] group-hover:bg-[#D48E2633]'>
                             <img className='w-4 sm:w-4.5 lg:w-5 object-cover h-auto' src={item.image} alt="" />
                         </div>
                         <h1 className='text-[#000000] font-bold text-[12px] sm:text-sm lg:text-base pt-3 pb-2'>{item.title}</h1>
