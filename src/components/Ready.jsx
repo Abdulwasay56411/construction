@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoCallOutline } from "react-icons/io5";
 
 const Ready = () => {
   return (
@@ -9,9 +10,9 @@ const Ready = () => {
         <p className='text-[#FFFFFF] text-[10px] sm:text-lg max-w-3xl py-2'>Join 100+ leading companies that trust Telal Al Shaheqa for their critical
         workforce requirements. Fast, compliant, and professional.</p>
     </div> 
-   <div className='flex gap-3 py-4'>
+   <div className='flex flex-col sm:flex-row gap-3 py-4'>
    <button className='w-54.5 h-11.5 text-[#D48E26] rounded-xl bg-[#FFFFFF] font-bold text-[12px]'>Request MANPOWER NOW</button>
-   <button className='border border-[#FFFFFF] w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold'>CALL: +988 50 000 0000</button>
+   <button className='flex justify-center items-center gap-2 border border-[#FFFFFF] w-54.5 sm:w-51.75 h-11.5 rounded-xl text-[#FFFFFF] text-[12px] font-semibold'><IoCallOutline size={15}/> CALL: +988 50 000 0000</button>
    </div>
     </div>
   )

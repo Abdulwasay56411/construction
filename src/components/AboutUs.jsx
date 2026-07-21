@@ -6,7 +6,7 @@ const AboutUs = () => {
     const [isActive, setIsActive] = useState(0)
 
     return (
-        <div className='py-10 px-5 md:px-8 lg:pl-10 max-w-350 mx-auto'>
+        <div id='about'  className='py-10 px-5 md:px-8 lg:pl-10 max-w-350 mx-auto'>
           <div className='flex items-center gap-3'>
           <hr className='w-17.5 text-[#D48E26] h-0' />
             <h1 className='text-[#D48E26] font-medium text-xl'>About US</h1>

@@ -34,7 +34,7 @@ const Counter = ({ value, suffix }) => {
 
 const HeroSection = () => {
   return (
-    <div className='bg-[url("/herobg.png")] bg-cover bg-center bg-[#111111F2]'>
+    <div id='home' className='bg-[url("/herobg.png")] bg-cover bg-center bg-[#111111F2]'>
       {/* Hero Section */}
       <div className='w-full h-160 lg:h-210 flex flex-col justify-center px-5 md:px-8 lg:px-10 max-w-350 mx-auto'>
         <div className='flex items-center gap-2 py-2 lg:gap-4 justify-center rounded-4xl px-2 bg-[#D48E2629] border border-[#D48E26] w-51.5  sm:w-111.75 h-auto'>

@@ -3,7 +3,7 @@ import Heading from './Heading'
 
 const Industries = () => {
   return (
-    <div className='px-5 md:px-8 lg:px-10 py-10 bg-[#F7F7F7]'>
+    <div id='industries' className='px-5 md:px-8 lg:px-10 py-10 bg-[#F7F7F7]'>
         <Heading text1={'INDUSTRIES WE SERVE'} text2={'Powering Every Sector'} para={'From upstream oil & gas to urban infrastructure our workforce solutions serve every major industry shaping Saudi Arabia.'}/>
         <div className='grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-5 lg:grid-cols-3 py-8 max-w-350 mx-auto'>
           {imgBox.map((item) =>(

@@ -43,7 +43,7 @@ const AskedQuestion = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
-            className='bg-[#F7F7F7] px-5 md:px-8 lg:px-10 py-10'>
+           id='faq' className='bg-[#F7F7F7] px-5 md:px-8 lg:px-10 py-10'>
            <Heading text1={'FAQ'} text2={'Frequently Asked Questions'} para={'Everything you need to know about our manpower supply and contracting services.'}/>
             <div className='flex flex-col items-center justify-center gap-5 mb-5 pt-14 max-w-350 mx-auto'>
                 {question.map((item) => (

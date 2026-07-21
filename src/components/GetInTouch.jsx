@@ -24,7 +24,7 @@ const GetInTouch = () => {
                                         </div>
                                         <div>
                                             <h1 className='text-xs font-medium text-[#868686]'>{item.title}</h1>
-                                            <p className='text-sm font-semibold text-[#FFFAFA]'>{item.text}</p>
+                                            <p className='text-[10px] sm:text-sm font-semibold text-[#FFFAFA]'>{item.text}</p>
                                         </div>
                                     </div>
                                 ))

@@ -8,7 +8,7 @@ const OurService = () => {
    const activeData = buttonContent[activeTab]
 
    return (
-      <div className='bg-[#1D1D1D] pt-5 pb-10 px-5 md:px-8 lg:px-10' >
+      <div id='services' className='bg-[#1D1D1D] pt-5 pb-10 px-5 md:px-8 lg:px-10' >
          <div className='max-w-350 mx-auto'>
             <Heading text1={'OUR SERVICES'} text3={'Professional Workforce Solution'} para1={'From specialized engineering placements to large-scale labor mobilizationwe deliver the human capital that powers Saudi Arabia.'} />
             <div className='flex flex-col items-center lg:flex-row justify-center py-10 gap-5'>

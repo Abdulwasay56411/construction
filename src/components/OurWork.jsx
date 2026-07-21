@@ -11,7 +11,7 @@ const OurWork = () => {
      : project.find(p => p.category === activeTile)?.image || []; 
 
     return (
-        <div className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto'>
+        <div id='projects' className='px-5 md:px-8 lg:px-10 py-10 max-w-350 mx-auto'>
             <div className='flex items-center gap-3'>
                 <hr className='w-17.5 sm:w-17.5 text-[#D48E26] h-0' />
                 <h1 className='text-[#D48E26] font-medium text-sm sm:text-xl'>Our Work</h1>

@@ -5,7 +5,7 @@ import Heading from './Heading';
 const OurClient = () => {
     return (
         <div>
-            <div className='px-5 md:px-8 lg:px-10 py-10 bg-[#F7F7F7] overflow-hidden'>
+            <div id='clients' className='px-5 md:px-8 lg:px-10 py-10 bg-[#F7F7F7] overflow-hidden'>
                 <Heading
                     text1={'OUR CLIENTS'}
                     text2={'Trusted by Industry Leaders'}
